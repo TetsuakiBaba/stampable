@@ -67,7 +67,12 @@
     <div class="container mt-4">
         <div class="row mt-4 mb-4">
             <div class="col-12">
+                <div class="d-grid mb-2 gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn btn-primary" onclick="toggleFullscreen();"><i
+                            class="bi bi-arrows-fullscreen"></i></button>
+                </div>
                 <div class="input-group">
+
                     <div class="input-group-text">
                         <input class="form-check-input mt-0" type="checkbox" value=""
                             aria-label="Checkbox for following text input" checked disabled>
@@ -75,7 +80,7 @@
                     </div>
 
                     <button type="button" class="form-control btn btn-lg btn-primary" onclick="addStamp(this);">
-                        <i data-dc-id="stamp_line"></i> スタンプを押す
+                        <i data-dc-id="stamp_line"></i> <br>スタンプを押す
                     </button>
                 </div>
                 <h2 class="display-4 text-center mt-4">回数: <span id="stamp_count"></span></h2>
@@ -237,6 +242,13 @@
             loadStamps();
         });
 
+        function toggleFullscreen() {
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                document.documentElement.requestFullscreen();
+            }
+        }
     </script>
 </body>
 
